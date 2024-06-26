@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {12, 1234, 45, 67, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int min_val = arr[0];
+    int max_val = arr[0];
+
+    for (int i = 1; i < n; ++i) {
+        min_val = min(min_val, arr[i]);
+        max_val = max(max_val, arr[i]);
+    }
+
+    cout << "Minimum element of array: " << min_val << endl;
+    cout << "Maximum element of array: " << max_val << endl;
+
+    return 0;
+}
