@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class Car {
+private:
+    string brand;
+    string model;
+    int year;
+
+public:
+    // Constructor with parameters
+    Car(string b, string m, int y) : brand(b), model(m), year(y) {
+        cout << "Car object created for " << brand << " " << model << " " << year << endl;
+    }
+
+    ~Car() {
+        cout << "Car object destroyed for " << brand << " " << model << " " << year << endl;
+    }
+    void display() {
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+};
+
+int main() {
+    Car car1("Toyota", "Camry", 2022);
+    Car car2("Honda", "Civic", 2023);
+    car1.display();
+    car2.display();
+    return 0;
+}
