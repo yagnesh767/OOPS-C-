@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+const int MAX_SIZE = 100; // Maximum size for the matrix
+
+int main() {
+    int matrix[MAX_SIZE][MAX_SIZE];
+    int n;
+    cout << "Enter the size of the square matrix (max " << MAX_SIZE << "): ";
+    cin >> n;
+    cout << "Enter the elements of the matrix:" << endl;
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            cin >> matrix[i][j];
+    int sumMainDiagonal = 0, sumSecondaryDiagonal = 0;
+    for (int i = 0; i < n; ++i) {
+        sumMainDiagonal += matrix[i][i];
+        sumSecondaryDiagonal += matrix[i][n - 1 - i];
+    }
+    cout << "Sum of the main diagonal: " << sumMainDiagonal << endl;
+    cout << "Sum of the secondary diagonal: " << sumSecondaryDiagonal << endl;
+
+    return 0;
+}
